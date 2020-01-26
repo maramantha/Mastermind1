@@ -76,6 +76,7 @@ namespace Mastermind
 
         public void DeleteOldSet()
         {
+            dt.Clear();
             if(File.Exists(path()))
             {
                 File.Delete(path());

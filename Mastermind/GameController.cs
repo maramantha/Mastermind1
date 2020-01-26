@@ -141,6 +141,7 @@ namespace Mastermind
                         if (Answer.checkAnswer(GuessSet))
                         {
                             SA.DeleteOldSet();
+                            Answer.ClearAnswer();
                             rValue = 1;
                         }
                         else

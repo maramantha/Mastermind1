@@ -8,7 +8,7 @@ namespace Mastermind
 {
     public class AnswerSection
     {
-        private string[] hiddenAnswer;
+        private List<string> hiddenAnswer;
         public bool AnswerSet;
 
         public AnswerSection()
@@ -17,14 +17,23 @@ namespace Mastermind
         }
         public string[] getAnswer()
         {
-            return hiddenAnswer;
+            return hiddenAnswer.ToArray();
+        }
+        public void ClearAnswer()
+        {
+            AnswerSet = false;
+            hiddenAnswer.Clear();
+            for(int i = 0; i <hiddenAnswer.Count; i++)
+            {
+
+            }
         }
 
         public void setAnswer(string[] input)
         {
-            if(AnswerSet == false)
+            if (AnswerSet == false)
             {
-                hiddenAnswer = input;
+                hiddenAnswer = input.ToList();
                 AnswerSet = true;
             }
         }
@@ -33,7 +42,7 @@ namespace Mastermind
             bool checkValue = true;
             if(AnswerSet)
             {
-                for(int i = 0; i<hiddenAnswer.Length;i++)
+                for(int i = 0; i<hiddenAnswer.Count;i++)
                 {
                     if(hiddenAnswer[i]!=input[i])
                     {
@@ -63,7 +72,7 @@ namespace Mastermind
         {
             List<int> amntRight = new List<int>();
 
-            for (int i = 0; i < hiddenAnswer.Length; i++)
+            for (int i = 0; i < hiddenAnswer.Count; i++)
             {
                 if(hiddenAnswer[i] == input[i])
                 {
@@ -92,7 +101,7 @@ namespace Mastermind
                 }
                 if(alreadyUsed ==false)
                 {
-                    for(int j = 0; j <hiddenAnswer.Length;j++)
+                    for(int j = 0; j <hiddenAnswer.Count;j++)
                     {
                         if(input[i]==hiddenAnswer[j]&& amntRight.Contains(j)!=true)
                         {

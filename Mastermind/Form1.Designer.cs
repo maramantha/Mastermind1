@@ -30,6 +30,8 @@
         {
             this.StartGame = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TryCountLimit = new System.Windows.Forms.NumericUpDown();
             this.ComputerPosition = new System.Windows.Forms.CheckBox();
             this.SinglePlayerOpt = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,12 +41,10 @@
             this.enableNull = new System.Windows.Forms.CheckBox();
             this.enableRepeats = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TryCountLimit = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TryCountLimit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slpotAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorAmount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TryCountLimit)).BeginInit();
             this.SuspendLayout();
             // 
             // StartGame
@@ -78,16 +78,45 @@
             this.groupBox1.Text = "Options";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(59, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 17);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Number of Tries";
+            // 
+            // TryCountLimit
+            // 
+            this.TryCountLimit.Location = new System.Drawing.Point(7, 135);
+            this.TryCountLimit.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.TryCountLimit.Minimum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.TryCountLimit.Name = "TryCountLimit";
+            this.TryCountLimit.Size = new System.Drawing.Size(46, 22);
+            this.TryCountLimit.TabIndex = 8;
+            this.TryCountLimit.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
             // ComputerPosition
             // 
             this.ComputerPosition.AutoSize = true;
-            this.ComputerPosition.Checked = true;
-            this.ComputerPosition.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ComputerPosition.Location = new System.Drawing.Point(6, 192);
             this.ComputerPosition.Name = "ComputerPosition";
-            this.ComputerPosition.Size = new System.Drawing.Size(125, 21);
+            this.ComputerPosition.Size = new System.Drawing.Size(108, 21);
             this.ComputerPosition.TabIndex = 7;
-            this.ComputerPosition.Text = "Comp Creator?";
+            this.ComputerPosition.Text = "AI Guesser?";
             this.ComputerPosition.UseVisualStyleBackColor = true;
             this.ComputerPosition.Visible = false;
             // 
@@ -195,37 +224,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(59, 140);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 17);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Number of Tries";
-            // 
-            // TryCountLimit
-            // 
-            this.TryCountLimit.Location = new System.Drawing.Point(7, 135);
-            this.TryCountLimit.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.TryCountLimit.Minimum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.TryCountLimit.Name = "TryCountLimit";
-            this.TryCountLimit.Size = new System.Drawing.Size(46, 22);
-            this.TryCountLimit.TabIndex = 8;
-            this.TryCountLimit.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -238,9 +236,9 @@
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TryCountLimit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slpotAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorAmount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TryCountLimit)).EndInit();
             this.ResumeLayout(false);
 
         }

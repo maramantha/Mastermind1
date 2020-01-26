@@ -38,11 +38,28 @@ namespace Mastermind
             AvailableColors = new List<string>();
             AvailablePegPicture = new Image[numofColors];
             InitializeComponent();
-            if (!computerGuesser)
+            if (!singlePlayerGame)
             {
                 MessageBox.Show("Please Input the sequence now Mastermind.");
             }
             TriesRemaining.Text = "Tries remaining: " + (NumTry).ToString();
+        }
+        private void ClearLastBtn()
+        {
+            Button[] CollectionBtn = btns();
+            bool checkTrigger = false;
+            for(int i = CollectionBtn.Length -1 ;i>=0; i--)
+            {
+                    if (CollectionBtn[i].Enabled == true & !checkTrigger)
+                    {
+                        if (CollectionBtn[i].Tag.ToString() != "NoColor")
+                        {
+                            CollectionBtn[i].Tag = "NoColor";
+                            CollectionBtn[i].BackgroundImage = null;
+                            checkTrigger = true;
+                        }
+                    }
+            }
         }
         private Button[] btns()
         {
@@ -128,6 +145,8 @@ namespace Mastermind
                     SetLabelWhite(GC.getWhitePegs());
                     AdjustColumnWidth();
                     MessageBox.Show("Congrats you won!");
+                    slotClearer();
+                    MessageBox.Show("If you would like to play again input new sequence.");
                     break;
                 case 2:
                     ReturnGuesses.DataSource = GC.GetDT();
@@ -327,6 +346,9 @@ namespace Mastermind
                     {
                         nextSlot(Peg10.BackgroundImage, Peg10.Tag.ToString());
                     }
+                    break;
+                case 8:
+                    ClearLastBtn();
                     break;
 
 
