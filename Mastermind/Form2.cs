@@ -367,11 +367,20 @@ namespace Mastermind
                 {
                     slts[i].Enabled = true;
                     slts[i].Visible = true;
+                }else
+                {
+                    slts[i].Enabled = false;
+                    slts[i].Visible = false;
                 }
                 if(i<numofColors)
                 {
                     clrs[i].Enabled = true;
                     clrs[i].Visible = true;
+                }
+                else
+                {
+                    clrs[i].Enabled = false;
+                    clrs[i].Visible = false;
                 }
             }
             availableColors();
